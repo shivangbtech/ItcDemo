@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="search" type="id"/>
+    <item name="item_click_support" type="id" />
+    <item name="position" type="id" />
+    <item name="status" type="id" />
+    <item name="product" type="id" />
+
+</resources>
