@@ -22,6 +22,7 @@ class MainActivity : BaseActivity() {
 
     private lateinit var mHomeViewModel: HomeViewModel
     private lateinit var mAdapter: InnerListAdapter
+    private val PAGE_SIZE = 15
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,12 +30,13 @@ class MainActivity : BaseActivity() {
         mHomeViewModel = ViewModelProviders.of(this@MainActivity).get(HomeViewModel::class.java)
         handleObserver()
         handleUI()
+        getProducts()
     }
 
-    override fun onStart() {
-        super.onStart()
-        mHomeViewModel.getListRows(1, 15)
-    }
+   private fun getProducts(){
+       progress_bar.visibility = View.VISIBLE
+       mHomeViewModel.getListRows(1, PAGE_SIZE)
+   }
 
     /**
      * Method call to initialize observer
@@ -49,12 +51,12 @@ class MainActivity : BaseActivity() {
      */
     private fun handleUI() {
         mAdapter = InnerListAdapter(ArrayList<Product>(), onItemClick)
-        var layoutManager:LinearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        var layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recycler_view_home.layoutManager = layoutManager
         recycler_view_home.adapter = mAdapter
-        recycler_view_home.addOnScrollListener(object :EndlessRecyclerViewScrollListener(layoutManager){
+        recycler_view_home.addOnScrollListener(object : EndlessRecyclerViewScrollListener(layoutManager) {
             override fun onLoadMore(page: Int, totalItemsCount: Int, view: RecyclerView?) {
-                mHomeViewModel.getListRows(page, 15)
+                mHomeViewModel.getListRows(page, PAGE_SIZE)
             }
         })
     }
@@ -63,8 +65,7 @@ class MainActivity : BaseActivity() {
      * Item click listener
      */
     var onItemClick = View.OnClickListener {
-        println("Clicked...............")
-                Navigator.instance.navigateToDetails(this@MainActivity, it.getTag(R.id.product) as Product)
+        Navigator.instance.navigateToDetails(this@MainActivity, it.getTag(R.id.product) as Product)
     }
 
 
@@ -73,6 +74,7 @@ class MainActivity : BaseActivity() {
      */
     private val mProductsObserver: Observer<Products> = Observer {
         mAdapter.addProducts((it as Products)!!.products)
+        progress_bar.visibility = View.GONE
     }
 
     /**

@@ -19,10 +19,6 @@ class DetailsActivity : AppCompatActivity() {
         handleUI()
     }
 
-    override fun onStart() {
-        super.onStart()
-    }
-
 
     /**
      * Method call to handle UI
