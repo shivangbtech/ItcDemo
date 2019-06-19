@@ -1,8 +1,8 @@
-package com.example.raku.itcapp.views.home
+package com.itc.app.views.home
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import com.example.raku.itcapp.components.Event
+import com.itc.app.components.Event
 import com.itc.app.models.BaseResponseModal
 import com.itc.app.models.home.Products
 import com.itc.app.network.ApiCallback

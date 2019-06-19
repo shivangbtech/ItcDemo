@@ -8,4 +8,65 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--Text styles-->
+
+    <style name="ITCHeader">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="ITCHeaderBiggest" parent="ITCHeader">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="ITCHeaderBig" parent="ITCHeader">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+
+    <style name="ITCTitle">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+
+    <style name="ITCTitleMedium" parent="ITCTitle">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="ITCTitleSmall" parent="ITCTitle">
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="ITCTitleSmallest" parent="ITCTitle">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+
+
+    <style name="ITCText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="ITCTextBold">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ITCTextMedium" parent="ITCText">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+
+    <!--End of text style-->
+
+
 </resources>

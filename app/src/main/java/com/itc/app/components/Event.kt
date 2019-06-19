@@ -1,4 +1,4 @@
-package com.example.raku.itcapp.components
+package com.itc.app.components
 
 open class Event<out T>(private val content: T) {
 

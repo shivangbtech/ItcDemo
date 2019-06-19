@@ -1,10 +1,10 @@
-package com.example.raku.itcapp.views
+package com.itc.app.views
 
 import android.content.Intent
-import com.example.raku.itcapp.base.BaseActivity
-import com.example.raku.itcapp.views.home.DetailsActivity
+import com.itc.app.base.BaseActivity
 import com.itc.app.constants.AppConstants
 import com.itc.app.models.home.Product
+import com.itc.app.views.home.DetailsActivity
 
 
 class Navigator private constructor() {

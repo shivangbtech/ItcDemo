@@ -1,4 +1,4 @@
-package com.example.raku.itcapp.base
+package com.itc.app.base
 
 import android.support.v7.app.AppCompatActivity
 

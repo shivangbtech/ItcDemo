@@ -1,6 +1,5 @@
 package com.itc.app.views.home;
 
-import android.provider.SyncStateContract;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,19 +13,19 @@ import com.itc.app.models.home.Product;
 
 import java.util.List;
 
-public class InnerListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class HomeListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<Product> itemsList;
     private View.OnClickListener mOnClickListener;
 
-    public InnerListAdapter(List<Product> itemsList, View.OnClickListener clickListener) {
+    public HomeListAdapter(List<Product> itemsList, View.OnClickListener clickListener) {
         this.itemsList = itemsList;
         mOnClickListener = clickListener;
     }
 
     @Override
     public ProductHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_list_innner, null);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_list_home, null);
         ProductHolder mh = new ProductHolder(v);
         return mh;
     }
